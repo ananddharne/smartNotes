@@ -4,7 +4,6 @@
     <template v-if="activeNote">
       <editor-highlight :body="activeNote.body">
       </editor-highlight>
-
       <textarea
         id="editor-textarea"
         class="editor__textarea" 
@@ -12,9 +11,10 @@
         @input="onInput"
         @blur="onBlur"
         @focus="onFocus"
-        placeholder="The quick brown fox..." 
+        placeholder="Description of the note..." 
         rows="12">
       </textarea>
+       <!-- <vue-editor v-model="content"></vue-editor> -->
     </template>    
     
     <div
@@ -33,6 +33,7 @@ import keyboard from 'keyboardjs'
 import { utilsMixin } from '../../mixins'
 import EditorHighlight from './EditorHighlight.vue'
 
+
 export default {
   name: 'editor',
   
@@ -41,7 +42,12 @@ export default {
   props: ['isPreview'],
  
   components: {
-    EditorHighlight
+    EditorHighlight,
+  },
+  data() {
+    return {
+       content: '<h1>Some initial content</h1>'
+    }
   },
 
   created () {
@@ -99,7 +105,10 @@ export default {
 
     onBlur () {
       this.SET_EDITING_ID(null)
-    }
+    },
+    htmlChanged (e) {
+     this.html = e
+   }
   }
 
 }

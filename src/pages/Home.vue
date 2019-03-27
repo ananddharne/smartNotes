@@ -8,12 +8,12 @@
         <router-link
           :to="{ name: 'home'}"
           class="home__nav__logo">
-          N<span>otational</span>
+          Smart<span>Notes</span>
         </router-link>
 
         <div>
           <a
-            href="mailto:yo@notational.co"
+            href="mailto:dharneanand92@gmail.com"
             class="home__nav__button">
             Contact
           </a>
@@ -37,10 +37,6 @@
     <div class="home__container main">
 
       <div class="home__content left">
-        <h1 class="home__headline">
-          Notes at the speed of thought.
-        </h1>
-
         <form class="home__form">
           <field
             v-for="field in fields"
@@ -85,11 +81,9 @@
     </div>
 
     <p class="home__subline">
-      <span>Smart shortcuts</span>, <span>magic save</span>, and <span>incremental search</span> keep your hands on the keyboard—and your brain happy.
-    </p>
-
+  
     <footer class="home__foot">
-      Built by <a href="http://meagher.co/">Tom</a> with <a href="https://vuejs.org/">Vue.js</a>. Inspired by, but not affiliated with <a href="http://notational.net/?ref=notational.co">Notational Velocity</a>.
+      Built by <a href="http://meagher.co/">Anand</a> with <a href="https://vuejs.org/">Vue.js</a>. Inspired by, but not affiliated with <a href="http://notational.net/?ref=notational.co">Notational Velocity</a>.
     </footer>
   </div>
 </template>
@@ -120,7 +114,7 @@ export default {
         name: 'Email Address',
         value: '',
         type: 'text',
-        placeholder: 'monica@raviga.com',
+        placeholder: 'adam@gmail.com',
         autofocus: false
       },
       password: {
@@ -191,7 +185,7 @@ export default {
 
   head: {
     title: {
-      inner: 'Notes at the speed of thought.'
+      inner: 'Notes app.'
     }
   }
 

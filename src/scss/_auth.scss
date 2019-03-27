@@ -26,10 +26,10 @@
 			color: #fff;
 			cursor: pointer;
 			background: {
-				color: palette(orange);
+				color: palette(grey);
 			}
 			border: {
-				color: palette(orange, dark);
+				color: palette(white, dark);
 				radius: $border-radius;
 				style: solid;
 				width: 1px;
@@ -55,7 +55,7 @@
 			}
 
 			&:hover {
-				border-color: palette(orange, x-dark);
+				border-color: palette(black, x-dark);
 			}
 		}
 	}

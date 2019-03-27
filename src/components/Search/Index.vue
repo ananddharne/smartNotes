@@ -144,7 +144,6 @@ export default {
       const id = this.nextIdForNotes(this.notes)
       const name = this.query.length > 0 ? this.query : 'Untitled Note'
       const note = this.createNote(id, name)
-
       this.CREATE_NOTE(note)
     },
     

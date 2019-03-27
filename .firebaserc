@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "notational-velocity"
+    "default": "notes-app",
+    "notesapp": "notesapp-6547c"
   }
 }
