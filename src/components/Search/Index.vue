@@ -214,9 +214,6 @@ export default {
         console.log(index)
         this.SET_RESULT_INDEX(index)
         this.SET_ACTIVE_NOTE(note)
-
-        // const key = this.findKeyForNoteId(note.id, this.notes)
-        // this.SET_ACTIVE_KEY(key)
       }
     },
 
