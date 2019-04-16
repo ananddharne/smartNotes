@@ -211,11 +211,12 @@ export default {
     onSelect (note) {
       if (this.resultIndex == -1 || note.id != this.activeNote.id) {
         const index = this.filteredNotes.indexOf(note)
+        console.log(index)
         this.SET_RESULT_INDEX(index)
         this.SET_ACTIVE_NOTE(note)
 
-        const key = this.findKeyForNoteId(note.id, this.notes)
-        this.SET_ACTIVE_KEY(key)
+        // const key = this.findKeyForNoteId(note.id, this.notes)
+        // this.SET_ACTIVE_KEY(key)
       }
     },
 

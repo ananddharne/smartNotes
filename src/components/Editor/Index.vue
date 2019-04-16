@@ -4,17 +4,10 @@
     <template v-if="activeNote">
       <editor-highlight :body="activeNote.body">
       </editor-highlight>
-      <textarea
-        id="editor-textarea"
-        class="editor__textarea" 
-        v-model="activeNote.body"
-        @input="onInput"
-        @blur="onBlur"
-        @focus="onFocus"
-        placeholder="Description of the note..." 
-        rows="12">
-      </textarea>
-       <!-- <vue-editor v-model="content"></vue-editor> -->
+  
+       <vue-editor id="editor-textarea" @input="onInput" @blur="onBlur"
+         @focus="onFocus" class="editor__textarea" v-model="activeNote.body">
+       </vue-editor>
     </template>    
     
     <div
@@ -32,6 +25,7 @@ import keyboard from 'keyboardjs'
 
 import { utilsMixin } from '../../mixins'
 import EditorHighlight from './EditorHighlight.vue'
+import { VueEditor, Quill } from "vue2-editor"
 
 
 export default {
@@ -43,6 +37,8 @@ export default {
  
   components: {
     EditorHighlight,
+    VueEditor,
+    Quill
   },
   data() {
     return {
@@ -55,7 +51,11 @@ export default {
       this.setUpHotKeys()
     }
   },
-
+  mounted () {
+    // if (this.activeNote) {
+    //   document.querySelector(".ql-editor").innerHTML = this.activeNote.name.bold()
+    // }
+  },
   beforeDestroy () {
     keyboard.reset()
   },
@@ -102,7 +102,7 @@ export default {
       if (this.activeNote.id != this.editingId)
         this.SET_EDITING_ID(this.activeNote.id)
     },
-
+    
     onBlur () {
       this.SET_EDITING_ID(null)
     },

@@ -22,11 +22,11 @@
     <template v-if="!(renaming)">
       <span class="search__result__name">
         <span v-html="name"></span>
-        <span
+        <!-- <span
           v-show="note.body.length > 0"
           class="search__result__description"> 
           – {{ note.body }}
-        </span>
+        </span> -->
       </span>
 
       <button
@@ -122,7 +122,7 @@ export default {
 
     onRenameBlur () {
       if (this.oldName != null && this.name !== this.oldName && !this.isRenamed) {
-        this.note.name = this.oldName
+        this.note.name = this.name
       }
       this.isRenamed = false
 
